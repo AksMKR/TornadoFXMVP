@@ -1,23 +1,12 @@
 package com.tornadofx.controllers
 
-import com.tornadofx.views.LoginView
-import org.controlsfx.control.Notifications
-import tornadofx.Controller
+import com.tornadofx.models.User
+import tornadofx.*
 
 class LoginController : Controller() {
 
-    val loginView: LoginView by inject()
+    val currentUser = User("admin", "1234")
 
-    init {
-        loginView.loginButton.setOnAction {
-            val username = loginView.userText
-            val password = loginView.passwordText
+    fun isValidUser(user: User) = (currentUser == user)
 
-            if (username.equals("admin") and password.equals("1234")) {
-                Notifications.create().text("Login Successful").showInformation()
-            } else {
-                Notifications.create().text("Username and/or password incorrect").showError()
-            }
-        }
-    }
 }

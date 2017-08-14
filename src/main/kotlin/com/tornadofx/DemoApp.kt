@@ -4,7 +4,7 @@ import com.tornadofx.controllers.AppController
 import com.tornadofx.views.AppView
 import javafx.application.Application
 import javafx.stage.Stage
-import tornadofx.App
+import tornadofx.*
 
 class DemoApp : App(AppView::class) {
 

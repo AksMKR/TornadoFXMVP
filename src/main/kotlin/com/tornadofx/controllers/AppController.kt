@@ -9,7 +9,6 @@ class AppController : Controller() {
 
     val appView: AppView by inject()
     val loginView: LoginView by inject()
-    val loginController: LoginController by inject()
 
     fun init() {
         appView.add(loginView.root)
